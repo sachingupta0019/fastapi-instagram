@@ -109,5 +109,3 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 ✅ Now you can run your **Instagram Clone API** locally with just a few commands.
 
 ---
-
-Do you also want me to **include React app setup commands** (inside `react_app/`) in this README, or keep it API-only?
