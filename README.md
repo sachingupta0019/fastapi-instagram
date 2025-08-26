@@ -9,6 +9,7 @@ A backend API built with **FastAPI** that mimics Instagram’s core features suc
 
 * User authentication & authorization (JWT-based)
 * Create, update, and delete posts
+* Add Post title, description, caption, Images
 * Like & comment on posts
 * SQLite database (default, via `instagram_api.db`)
 * Organized project structure (auth, database, routes, schema)
