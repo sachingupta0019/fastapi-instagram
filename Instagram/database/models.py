@@ -12,6 +12,7 @@ class InstgramUserModel(Base):
     username = Column(String(50), nullable=False)
     email = Column(String(50), nullable=False)
     password = Column(String(120))
+    # profile_photo_url = Column(String(512))
     ### Relationship
     post = relationship("InstagramModel", back_populates="user")
 

@@ -9,12 +9,14 @@ class InstagramUserSchema(BaseModel):
     username: Annotated[str, Field(title="User Name")]
     email: Annotated[str, Field(title="User Email")]
     password: Annotated[str, Field("User Password")]
+    # profile_photo_url: Annotated[str, Field("Profile Photo")]
 
 
 class InstagramUserSchemaDisplay(BaseModel):
     id: Annotated[int, Field(title="User ID")]
     username: Annotated[str, Field(title="User Name")]
     email: Annotated[str, Field(title="User Email")]
+    # profile_photo_url: Annotated[str, Field("Profile Photo")]
     class config():
         orm_mode = True
 
@@ -40,6 +42,7 @@ class InstagramSchema(BaseModel):
 ## For InstagramSchemaDisplay Display
 class User(BaseModel):
     username: str
+    # profile_photo_url: str
     class config():
         orm_mode = True
 

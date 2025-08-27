@@ -11,6 +11,7 @@ def create_user(request: InstagramUserSchema, db: Session):
         username = request.username,
         email = request.email,
         password = Hash.bcrypt(request.password),
+        # profile_photo = request.profile_photo,
     )
     db.add(new_user)
     db.commit()
