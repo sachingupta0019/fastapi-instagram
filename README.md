@@ -107,3 +107,8 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 ---
 
 ✅ Now you can run your **Instagram Clone API** locally with just a few commands.
+
+
+## Frontend Setup 
+
+*COming Soon.
