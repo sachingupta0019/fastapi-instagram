@@ -9,7 +9,7 @@ Instagram/instagram_api.db
 Instagram/images
 
 ### pycache
- Instagram/__pycache__
+Instagram/__pycache__
 
 ### environment
 instagram_env
@@ -22,15 +22,15 @@ instagram_env
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-react_app/node_modules
+frontend/node_modules
 /.pnp
 .pnp.js
 
 # testing
-react_app/coverage
+frontend/coverage
 
 # production
-react_app/build
+frontend/build
 
 # misc
 .DS_Store
@@ -39,9 +39,9 @@ react_app/build
 .env.test.local
 .env.production.local
 
-react_app/npm-debug.log*
-react_app/yarn-debug.log*
-react_app/yarn-error.log*
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
 
 
 
