@@ -5,6 +5,9 @@ react_app
 ###  database
 Instagram/instagram_api.db
 
+### Static Files
+Instagram/images
+
 ### pycache
  Instagram/__pycache__
 
