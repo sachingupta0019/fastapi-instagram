@@ -1,0 +1,42 @@
+.app{
+    background-color: #fafafa;
+}
+
+.app_header{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+    object-fit: contain;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+
+/* Cutom Modal CSS */
+
+ .app_signin {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.app_headerImage{
+     object-fit: contain;
+    width: 200px;
+}
+
+.app_signin_input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: 20px;
+    flex-wrap: nowrap;
+    align-content: space-between;
+}  
+
+/* Cutom Modal CSS */
