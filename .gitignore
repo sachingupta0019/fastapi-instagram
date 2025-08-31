@@ -5,6 +5,9 @@
 ###  database
 Instagram/instagram_api.db
 
+### Static Images
+Instagram/images
+
 ### pycache
  Instagram/__pycache__
 
