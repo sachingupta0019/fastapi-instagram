@@ -1,11 +1,10 @@
 ### Frontend Instagram - In Developemt.
-react_app 
 
 
 ###  database
 Instagram/instagram_api.db
 
-### Static Files
+### Static Images
 Instagram/images
 
 ### pycache
@@ -13,3 +12,59 @@ Instagram/images
 
 ### environment
 instagram_env
+
+
+
+
+### React APP 
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+react_app/node_modules
+/.pnp
+.pnp.js
+
+# testing
+react_app/coverage
+
+# production
+react_app/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+react_app/npm-debug.log*
+react_app/yarn-debug.log*
+react_app/yarn-error.log*
+
+
+
+
+# # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# # dependencies
+# /node_modules
+# /.pnp
+# .pnp.js
+
+# # testing
+# /coverage
+
+# # production
+# /build
+
+# # misc
+# .DS_Store
+# .env.local
+# .env.development.local
+# .env.test.local
+# .env.production.local
+
+# npm-debug.log*
+# yarn-debug.log*
+# yarn-error.log*
