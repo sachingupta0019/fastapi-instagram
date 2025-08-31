@@ -1,19 +1,32 @@
+Here’s an updated README that includes your React frontend along with your FastAPI backend. I’ve integrated it so users can run both parts together seamlessly.
 
-# 📸 FastAPI Instagram Clone API
+---
 
-A backend API built with **FastAPI** that mimics Instagram’s core features such as authentication, posting images, liking, and commenting.
+# 📸 FastAPI Instagram Clone
+
+A full-stack Instagram clone project with **FastAPI** as backend and **React** as frontend. Mimics Instagram’s core features such as authentication, posting images, liking, and commenting.
 
 ---
 
 ## 🚀 Features
 
+### Backend (FastAPI)
+
 * User authentication & authorization (JWT-based)
 * Create, update, and delete posts
-* Add Post title, description, caption, Images
+* Add post title, description, caption, images
 * Like & comment on posts
 * SQLite database (default, via `instagram_api.db`)
 * Organized project structure (auth, database, routes, schema)
 * Automatic API docs with **Swagger** & **ReDoc**
+
+### Frontend (React)
+
+* Responsive Instagram-like UI
+* User login/signup
+* Display posts with images, captions, likes, and comments
+* Add, like, and comment on posts
+* Works seamlessly with FastAPI backend
 
 ---
 
@@ -21,20 +34,25 @@ A backend API built with **FastAPI** that mimics Instagram’s core features suc
 
 ```bash
 Instagram_Clone/
-│── Instagram/
-│   ├── auth/             # Authentication logic
-│   ├── database/         # Database connection/config
-│   ├── images/           # Uploaded images
-│   ├── routes/           # API routes (users, posts, comments, etc.)
-│   ├── schema/           # Pydantic schemas
-│   ├── instagram_api.db  # SQLite database
-│   ├── main.py           # Application entry point
-│   └── requirements.txt  # Dependencies for this app
+│── Instagram/             # FastAPI backend
+│   ├── auth/
+│   ├── database/
+│   ├── images/
+│   ├── routes/
+│   ├── schema/
+│   ├── instagram_api.db
+│   ├── main.py
+│   └── requirements.txt
 │
-├── instagram_env/        # Virtual environment (ignored in git)
-├── react_app/            # Frontend (React project)
+├── react_app/             # React frontend
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── README.md
+│
+├── instagram_env/         # Virtual environment (ignored in git)
 ├── .gitignore
-└── requirements.txt      # Root dependencies
+└── requirements.txt       # Root dependencies
 ```
 
 ---
@@ -45,48 +63,61 @@ Instagram_Clone/
 
 ```bash
 git clone https://github.com/your-username/fastapi-instagram-clone.git
-cd FastAPI/Instagram_Clone
+cd fastapi-instagram-clone
 ```
 
-### 2️⃣ Create & activate virtual environment
+---
+
+### 2️⃣ Backend Setup (FastAPI)
 
 ```bash
 # Create virtual environment
 python -m venv instagram_env
 
-# Activate venv (Windows)
+# Activate virtual environment
+# Windows
 instagram_env\Scripts\activate
-
-# Activate venv (Mac/Linux)
+# Mac/Linux
 source instagram_env/bin/activate
-```
 
-### 3️⃣ Install dependencies
-
-```bash
+# Install dependencies
 pip install -r Instagram/requirements.txt
-```
 
-### 4️⃣ Run the application
-
-```bash
+# Run backend
 uvicorn Instagram.main:app --reload
 ```
 
-Server will start at 👉 **[http://127.0.0.1:8000](http://127.0.0.1:8000)**
+Backend will start at 👉 [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+API Docs:
+
+* Swagger → [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+* ReDoc → [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
 
 ---
 
-## 📑 API Documentation
+### 3️⃣ Frontend Setup (React)
 
-* Swagger UI → [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-* ReDoc → [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+```bash
+# Navigate to frontend
+cd react_app
+
+# Install dependencies
+npm install
+
+# Start React app
+npm start
+```
+
+React frontend will start at 👉 [http://localhost:3000](http://localhost:3000) and interact with FastAPI backend.
+
+> ⚠️ Make sure the backend is running before using the frontend.
 
 ---
 
 ## 🛠️ Environment Variables
 
-Create a `.env` file in the root or configure inside `main.py`:
+Create a `.env` file in the root or inside backend (`Instagram/`):
 
 ```ini
 DATABASE_URL=sqlite:///./Instagram/instagram_api.db
@@ -95,15 +126,24 @@ ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 ```
 
+For frontend, you can create a `.env` file in `react_app/` if you need API URLs:
+
+```ini
+REACT_APP_API_URL=http://127.0.0.1:8000
+```
+
 ---
 
 ## 🎯 Future Enhancements
 
-* Switch to PostgreSQL for production
-* Add image storage in AWS S3 / Cloudinary
+* Switch backend to PostgreSQL for production
+* Store images in AWS S3 / Cloudinary
 * Implement notifications & stories
-* Dockerize the application
+* Dockerize backend & frontend for easy deployment
+* Deploy frontend on GitHub Pages / Vercel
+* Deploy backend on AWS EC2 / Railway / Render
 
 ---
 
-✅ Now you can run your **Instagram Clone API** locally with just a few commands.
+✅ Now you can run your **Instagram Clone** locally with **FastAPI backend** and **React frontend** seamlessly.
+
