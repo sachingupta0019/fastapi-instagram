@@ -34,7 +34,7 @@ class InstagramSchema(BaseModel):
     image_url: Annotated[str, Field(title="Post Image Url")]
     image_url_type: Annotated[str, Field(title="Type of Image URL.")]
     caption: Annotated[str, Field(title=" Image Caption.")]
-    created_at: Annotated[datetime, Field(title="created at")]
+    # created_at: Annotated[datetime, Field(title="created at")]
     user_id: Annotated[int, Field("user Id")]
     #updated_at: Annotated[datetime, Field(title="updated at")]
 
@@ -58,6 +58,7 @@ class Comment(BaseModel):
 
 ##
 class InstagramSchemaDisplay(BaseModel):
+    id: int
     post_title: Annotated[str, Field(title="Post Title")]
     #description: Annotated[str, Field(title="Post description")]
     image_url: Annotated[str, Field(title="Post Image Url")]
