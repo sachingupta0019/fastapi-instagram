@@ -9,7 +9,7 @@ from datetime import datetime
 def create_comment(request: InstagramCommentSchema, db:Session):
     new_comment = InstagramCommentModel(
         text = request.text,
-        likes = request.likes,
+        likes = request.likes if request.likes is not None else 0,
         username = request.username,
         timestamp = datetime.now(),
         post_id = request.post_id

@@ -16,6 +16,10 @@ app.include_router(user.router)
 app.include_router(ig_post.router)
 app.include_router(comment.router)
 
+
+
+
+
 @app.get('/')
 def home():
     return {"message" : 'Instagram App in Developement.'}
