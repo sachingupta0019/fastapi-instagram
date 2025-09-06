@@ -9,6 +9,9 @@ import os
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
 
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL is not set. Please define it in .env or Railway environment variables.")
+
 engine = create_engine(DATABASE_URL)
 
 SessionLocal = sessionmaker(bind=engine, autoflush=False)

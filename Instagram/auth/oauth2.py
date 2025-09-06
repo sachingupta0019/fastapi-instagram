@@ -1,8 +1,8 @@
 from fastapi.security import OAuth2PasswordBearer
 from fastapi import Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from db.database import get_db
-from db import db_user
+from Instagram.db.database import get_db
+from Instagram.db import db_user
 from typing import Optional
 from datetime import datetime, timedelta
 from jose import jwt, JWTError
