@@ -23,7 +23,7 @@ def home():
 
 
 ###
-app.mount("/Instagram/images", StaticFiles(directory="Instagram/images"), name="images")
+app.mount("/images", StaticFiles(directory="Instagram/images"), name="images")
 '''
 app.mount() is also commonly used with StaticFiles 
 to serve static assets like HTML, CSS, JavaScript, 
