@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from Instagram.db import models
-from Instagram.db.database import engine
-from Instagram.routes import user, ig_post, comment
-from Instagram.auth import authentication
+from db import models
+from db.database import engine
+from routes import user, ig_post, comment
+from auth import authentication
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -23,7 +23,7 @@ def home():
 
 
 ###
-app.mount("/images", StaticFiles(directory="Instagram/images"), name="images")
+app.mount("/images", StaticFiles(directory="images"), name="images")
 '''
 app.mount() is also commonly used with StaticFiles 
 to serve static assets like HTML, CSS, JavaScript, 

@@ -1,5 +1,5 @@
-from Instagram.db.models import InstagramCommentModel
-from Instagram.schema.schema import InstagramCommentSchema
+from db.models import InstagramCommentModel
+from schema.schema import InstagramCommentSchema
 from sqlalchemy.orm import Session
 from datetime import datetime
 

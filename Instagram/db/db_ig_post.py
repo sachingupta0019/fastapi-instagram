@@ -1,7 +1,7 @@
 from fastapi import Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from Instagram.schema.schema import InstagramSchema
-from Instagram.db.models import InstagramModel
+from schema.schema import InstagramSchema
+from db.models import InstagramModel
 from datetime import datetime
 
 
