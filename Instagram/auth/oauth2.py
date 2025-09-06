@@ -6,16 +6,22 @@ from database import db_user
 from typing import Optional
 from datetime import datetime, timedelta
 from jose import jwt, JWTError
+from dotenv import load_dotenv
+import os
 
 
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+SECRET_KEY = os.getenv("SECRET_KEY")
+ALGORITHM = os.getenv("ALGORITHM")
+ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES"))
 
 
 oauth2_schema = OAuth2PasswordBearer(tokenUrl='login')
 
 
-SECRET_KEY = '202c3153cb5bc22345860bdaedaf6619b3061ce129a197c5bf02cbbf47d7a715' ### import secrets; print(secrets.token_hex(32))
-ALGORITHM = 'HS256'
-ACCESS_TOKEN_EXPIRE_MINUTES = 15
+
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     to_encode = data.copy()
