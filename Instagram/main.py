@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from database import models
-from database.database import engine
+from db import models
+from db.database import engine
 from routes import user, ig_post, comment
 from auth import authentication
 from fastapi.staticfiles import StaticFiles

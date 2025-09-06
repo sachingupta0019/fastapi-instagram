@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File
 from sqlalchemy.orm import Session
-from database.database import get_db
-from database.models import InstagramModel
+from db.database import get_db
+from db.models import InstagramModel
 from schema.schema import InstagramSchema, InstagramSchemaDisplay, UserAuthSchema
-from database import db_ig_post
+from db import db_ig_post
 from auth.oauth2 import get_cuurent_user
 from typing import List
 import string

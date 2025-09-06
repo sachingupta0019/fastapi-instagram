@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException, status, Depends
-from database.database import get_db
+from db.database import get_db
 from schema.schema import InstagramCommentSchema, UserAuthSchema
 from sqlalchemy.orm import Session
-from database import db_comment
+from db import db_comment
 from auth.oauth2 import get_cuurent_user
 from typing import List
 
