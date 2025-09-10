@@ -6,26 +6,36 @@ from Instagram.schema.schema import InstagramSchema, InstagramSchemaDisplay, Use
 from Instagram.db import db_ig_post
 from Instagram.auth.oauth2 import get_cuurent_user
 from typing import List
-import string
-import random
-import shutil
+import string, random, shutil, os
 
+###
 
 router = APIRouter(prefix='/post', tags=['IG Post'])
+
 
 image_url_types = ['absolute','relative']
 
 @router.post('/image', response_model=None)
-def upload_image(img: UploadFile = File(...), cuurent_user: UserAuthSchema = Depends(get_cuurent_user)):
+async def upload_image(img: UploadFile = File(...), cuurent_user: UserAuthSchema = Depends(get_cuurent_user)):
     letters = string.ascii_letters
     rand_str = ''.join(random.choice(letters) for i in range(6))
     new_str = f"_{rand_str}."
     filename = new_str.join(img.filename.rsplit(".",1))
-    path = f"images/{filename}"
+    # path = f"Instagram/images/{filename}"
     # return path
-    with open(path, "w+b") as buffer:
-        shutil.copyfileobj(img.file, buffer)
-    #
+
+    UPLOAD_DIR = "Instagram/images"
+    # Make sure the folder exists
+    os.makedirs(UPLOAD_DIR, exist_ok=True)
+    path = os.path.join(UPLOAD_DIR, img.file.filename)
+
+    with open(path, "wb") as buffer:
+        buffer.write(await img.file.read())
+
+    
+    # with open(path, "w+b") as buffer:
+    #     shutil.copyfileobj(img.file, buffer)
+    
     return {'filename': path}
 
 
