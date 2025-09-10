@@ -42,6 +42,7 @@ models.Base.metadata.create_all(engine)
 origin = [
     'http://localhost:3000',
     'http://localhost:8000',
+    "https://fastapi-instagram.vercel.app",
 ]
 
 app.add_middleware(
