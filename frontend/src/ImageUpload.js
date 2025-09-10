@@ -39,7 +39,7 @@ function ImageUpload({authToken, authTokenType, userId}) {
         throw response
       })
       .then(data => {
-        createPost(data.filename)
+        createPost(data.url)
       })
       .catch(error => {
         console.log(error);
