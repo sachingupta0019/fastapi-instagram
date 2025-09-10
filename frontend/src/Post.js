@@ -119,7 +119,7 @@ function Post({ post, authToken, authTokenType, username }) {
 
       <img
         className="post_img"
-        src={`${BASE_URL}/images/${post.image}`}
+        src={`${BASE_URL}images/${post.image_url}`}
         
         alt=""
       />
