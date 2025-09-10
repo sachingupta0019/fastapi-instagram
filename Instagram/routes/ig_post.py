@@ -25,10 +25,13 @@ def upload_image(img: UploadFile = File(...), cuurent_user: UserAuthSchema = Dep
     # return path
     #filename = f"{img.filename.rsplit('.', 1)[0]}_{rand_str}.{img.filename.rsplit('.', 1)[-1]}"
 
-    UPLOAD_DIR = "Instagram/images"
+    UPLOAD_DIR = "Instagram"
     # Make sure the folder exists
-    os.makedirs(UPLOAD_DIR, exist_ok=True)
-    path = os.path.join(UPLOAD_DIR, filename)
+    os.makedirs(os.path.join(UPLOAD_DIR, "images"), exist_ok=True)
+    #os.makedirs(UPLOAD_DIR, exist_ok=True)
+    #path = os.path.join(UPLOAD_DIR, filename)
+    path = os.path.join(UPLOAD_DIR, "images", filename)
+
 
     # with open(path, "wb") as buffer:
     #     buffer.write(await img.file.read())
@@ -36,7 +39,7 @@ def upload_image(img: UploadFile = File(...), cuurent_user: UserAuthSchema = Dep
     with open(path, "wb") as buffer:
         shutil.copyfileobj(img.file, buffer)
 
-    return {"filename": filename, "url": f"images/{filename}"}
+    return {"filename": filename, "url": f"Instagram/images/{filename}"}
 
 
 ### Create New Post...
