@@ -6,9 +6,9 @@ import Post from './Post';
 import ImageUpload from './ImageUpload';
 
 // const BASE_URL = 'http://localhost:8000/'
-// const BASE_URL = "https://fastapi-instagram.onrender.com/";
-const BASE_URL = process.env.REACT_APP_BASE_URL;
-console.log("base Url :::::::::::::", BASE_URL);
+const BASE_URL = "https://fastapi-instagram.onrender.com/";
+// const BASE_URL = process.env.REACT_APP_BASE_URL;
+// console.log("base Url :::::::::::::", BASE_URL);
 
 
 function getModalStyle() {
