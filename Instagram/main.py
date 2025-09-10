@@ -5,6 +5,7 @@ from Instagram.routes import user, ig_post, comment
 from Instagram.auth import authentication
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
+import os
 
 ###
 app = FastAPI()
@@ -21,6 +22,8 @@ def home():
     return {"message" : 'Instagram App in Developement.'}
 
 
+# Ensure the directory exists
+os.makedirs("Instagram/images", exist_ok=True)
 
 ###
 app.mount("/images", StaticFiles(directory="Instagram/images"), name="images")

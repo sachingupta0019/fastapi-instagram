@@ -5,8 +5,12 @@
 ###  database
 Instagram/instagram_api.db
 
-### Static Images
-Instagram/images
+# Ignore everything inside images
+Instagram/images/*
+
+# But keep the placeholder
+!Instagram/images/.gitkeep
+
 
 ### pycache
 Instagram/__pycache__
