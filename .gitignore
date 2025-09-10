@@ -13,8 +13,7 @@ Instagram/__pycache__
 
 ### environment
 instagram_env
-
-Instagram
+.env
 
 
 
@@ -25,6 +24,7 @@ Instagram
 
 # dependencies
 frontend/node_modules
+frontend/.env
 /.pnp
 .pnp.js
 

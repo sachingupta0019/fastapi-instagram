@@ -2,7 +2,8 @@ import React, {useState, useEffect} from "react";
 import './Post.css'
 import { Avatar, Button } from "@mui/material";
 
-const BASE_URL = 'http://localhost:8000/'
+// const BASE_URL = 'http://localhost:8000/'
+const BASE_URL = "https://fastapi-instagram.onrender.com/";
 
 function Post({ post, authToken, authTokenType, username }) {
 
