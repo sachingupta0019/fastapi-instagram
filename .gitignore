@@ -7,7 +7,7 @@ Instagram/instagram_api.db
 
 # Ignore everything inside images
 Instagram/images/*
-/Instagram/images/*
+
 
 # But keep the placeholder
 !Instagram/images/.gitkeep
