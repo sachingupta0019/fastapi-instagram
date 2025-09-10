@@ -39,7 +39,14 @@ def upload_image(img: UploadFile = File(...), cuurent_user: UserAuthSchema = Dep
     with open(path, "wb") as buffer:
         shutil.copyfileobj(img.file, buffer)
 
-    return {"filename": filename, "url": f"Instagram/images/{filename}"}
+    #return {"filename": filename, "url": f"Instagram/images/{filename}"}
+    return {
+        "filename": filename,
+        "url": f"/images/{filename}",  # <-- frontend will prepend BASE_URL
+        "image_url_type": {image_url_types}
+    }
+
+
 
 
 ### Create New Post...
