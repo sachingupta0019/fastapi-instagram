@@ -16,27 +16,27 @@ router = APIRouter(prefix='/post', tags=['IG Post'])
 image_url_types = ['absolute','relative']
 
 @router.post('/image', response_model=None)
-async def upload_image(img: UploadFile = File(...), cuurent_user: UserAuthSchema = Depends(get_cuurent_user)):
+def upload_image(img: UploadFile = File(...), cuurent_user: UserAuthSchema = Depends(get_cuurent_user)):
     letters = string.ascii_letters
     rand_str = ''.join(random.choice(letters) for i in range(6))
     new_str = f"_{rand_str}."
     filename = new_str.join(img.filename.rsplit(".",1))
     # path = f"Instagram/images/{filename}"
     # return path
+    #filename = f"{img.filename.rsplit('.', 1)[0]}_{rand_str}.{img.filename.rsplit('.', 1)[-1]}"
 
     UPLOAD_DIR = "Instagram/images"
     # Make sure the folder exists
     os.makedirs(UPLOAD_DIR, exist_ok=True)
-    path = os.path.join(UPLOAD_DIR, img.file.filename)
+    path = os.path.join(UPLOAD_DIR, filename)
+
+    # with open(path, "wb") as buffer:
+    #     buffer.write(await img.file.read())
 
     with open(path, "wb") as buffer:
-        buffer.write(await img.file.read())
+        shutil.copyfileobj(img.file, buffer)
 
-    
-    # with open(path, "w+b") as buffer:
-    #     shutil.copyfileobj(img.file, buffer)
-    
-    return {'filename': path}
+    return {"filename": filename, "url": f"Instagram/images/{filename}"}
 
 
 ### Create New Post...
