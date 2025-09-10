@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import {Button} from '@mui/material'
 import './ImageUpload.css'
 
-const BASE_URL = 'http://localhost:8000/'
+// const BASE_URL = 'http://localhost:8000/'
+const BASE_URL = "https://fastapi-instagram.onrender.com/";
 
 function ImageUpload({authToken, authTokenType, userId}) {
   const [caption, setCaption] = useState('');
