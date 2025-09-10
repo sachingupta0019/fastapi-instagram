@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from db import models
-from db.database import engine
-from routes import user, ig_post, comment
-from auth import authentication
+from .db import models
+from .db.database import engine
+from .routes import user, ig_post, comment
+from .auth import authentication
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -38,7 +38,7 @@ models.Base.metadata.create_all(engine)
 
 origin = [
     'http://localhost:3000',
-    'http://localhost:8000/',
+    'http://localhost:8000',
 ]
 
 app.add_middleware(
