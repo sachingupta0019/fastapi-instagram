@@ -1,7 +1,7 @@
-from db.models import InstgramUserModel
-from schema.schema import InstagramUserSchema, InstagramUserSchemaDisplay
+from Instagram.db.models import InstgramUserModel
+from Instagram.schema.schema import InstagramUserSchema, InstagramUserSchemaDisplay
 from sqlalchemy.orm import Session
-from db.hash import Hash
+from Instagram.db.hash import Hash
 from fastapi import HTTPException, status
 
 

@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, Boolean
 from sqlalchemy.orm import relationship
 from sqlalchemy.schema import ForeignKey
-from db.database import Base
+from Instagram.db.database import Base
 from datetime import datetime
 
 
